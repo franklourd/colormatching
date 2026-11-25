@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matching Color</title>
+  <link rel="stylesheet" href="matchingcolor.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="game-header">
+      <div>
+        <p class="eyebrow">Memory challenge</p>
+        <h1>Matching Color</h1>
+      </div>
+      <button class="icon-button" id="newGameBtn" type="button" aria-label="Start a new game" title="New game">
+        <span aria-hidden="true">&#8635;</span>
+      </button>
+    </header>
+
+    <section class="stats" aria-label="Game statistics">
+      <div class="stat">
+        <span class="stat-icon" aria-hidden="true">&#9711;</span>
+        <span>
+          <small>Time</small>
+          <strong id="timer">0:00</strong>
+        </span>
+      </div>
+      <div class="stat">
+        <span class="stat-icon moves-icon" aria-hidden="true">&#8596;</span>
+        <span>
+          <small>Moves</small>
+          <strong id="moves">0</strong>
+        </span>
+      </div>
+      <div class="stat">
+        <span class="stat-icon best-icon" aria-hidden="true">&#9733;</span>
+        <span>
+          <small>Best</small>
+          <strong id="best">--</strong>
+        </span>
+      </div>
+    </section>
+
+    <section class="progress-wrap" aria-label="Game progress">
+      <div class="progress-heading">
+        <span id="progressText">0 of 8 pairs</span>
+        <span id="progressPercent">0%</span>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </section>
+
+    <div id="gameBoard" class="board" aria-label="Memory card board"></div>
+
+    <button class="new-game-button" id="bottomNewGameBtn" type="button">New game</button>
+  </main>
+
+  <div class="win-modal" id="winModal" role="dialog" aria-modal="true" aria-labelledby="winTitle" hidden>
+    <div class="confetti" aria-hidden="true"></div>
+    <div class="win-card">
+      <div class="trophy" aria-hidden="true">&#9733;</div>
+      <p class="eyebrow">Board complete</p>
+      <h2 id="winTitle">You matched them all!</h2>
+      <p class="win-summary" id="winSummary"></p>
+      <button class="new-game-button" id="playAgainBtn" type="button">Play again</button>
+    </div>
+  </div>
+  <script src="matchingcolor.js"></script>
+</body>
+</html>
